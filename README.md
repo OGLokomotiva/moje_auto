@@ -1,2 +1,2 @@
-# moje_auto
-graduation thesis
+# Moje Auto
+- *graduation thesis*
