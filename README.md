@@ -1,5 +1,6 @@
 # Moje Auto
 - *graduation thesis*
+- *Version: 0.0.1*
 
 ## O aplikaci
 Jedná se o moderní nástroj pro správu starších vozů.
