@@ -5,3 +5,6 @@
 - Android Studio
 - aplikace je psána v java scryptu
 - pro vizuál front-endu je používáno css a html
+
+## Kompatibilita
+- Android 5.1 (Lolipop) a vyšší
