@@ -17,7 +17,7 @@ Jedná se o moderní nástroj pro správu starších vozů.
 
 ### Rozložení
 `activity_main.xml`
--základní rozvětvení UI (User Interface)
+- základní rozvětvení UI (User Interface)
 - `FrameLayout` zaobaluje `WebView`
 - `WebView` = vyzobrazuje obsah, v našem případě z adresáře `"file:///android_asset/FILE.html"`
 - `BottomNavigationView` = spodní navigační bar
