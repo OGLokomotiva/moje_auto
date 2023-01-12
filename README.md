@@ -83,6 +83,6 @@ V souboru `navigation_bar.xml` nalezneme obsah komponenty `BottomNavigationView`
 </menu>
 ```
 
-Jednotlivé buttony odkazjí na fragmenty, které následově opět vyzobrazují obsah, načtením příslušného .html souboru.
+Jednotlivé buttony v navigačním baru, odkazují na fragmenty, které následovně vyzobrazují obsah, načtením příslušného .html souboru.
 
 
