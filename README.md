@@ -17,7 +17,7 @@ Jedná se o moderní nástroj pro správu starších vozů.
 
 ### Rozložení
 - activity_main.xml
-- - základní rozložení ui v aplikaci
+-- základní rozložení ui v aplikaci
 
 <code>
 <?xml version="1.0" encoding="utf-8"?>
