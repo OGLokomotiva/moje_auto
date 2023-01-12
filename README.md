@@ -16,8 +16,11 @@ Jedná se o moderní nástroj pro správu starších vozů.
 ## Dev doc
 
 ### Rozložení
-- activity_main.xml
--- základní rozložení ui v aplikaci
+`activity_main.xml`
+-základní rozvětvení UI (User Interface)
+- `FrameLayout` zaobaluje `WebView`
+- `WebView` = vyzobrazuje obsah, v našem případě z adresáře `"file:///android_asset/FILE.html"`
+- `BottomNavigationView` = spodní navigační bar
 
 <code>
 <?xml version="1.0" encoding="utf-8"?>
@@ -55,5 +58,28 @@ Jedná se o moderní nástroj pro správu starších vozů.
 </code>
 
 ### Navigace
-navigation_bar.xml
+`navigation_bar.xml`
+- obsah `BottomNavigationView`
+
+<code>
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="home"
+        android:onClick=""
+        android:enabled="true"
+        android:title="Přehled"
+        android:icon="@drawable/ic_baseline_directions_car_24"/>
+    <item
+        android:id="refueling"
+        android:enabled="true"
+        android:title="Tankování"
+        android:icon="@drawable/ic_baseline_local_gas_station_24"/>
+    <item
+        android:id="settings"
+        android:enabled="true"
+        android:title="Nastavení"
+        android:icon="@drawable/ic_baseline_settings_24"/>
+</menu>
+</code>
 
