@@ -22,7 +22,7 @@ Jedná se o moderní nástroj pro správu starších vozů.
 - `WebView` = vyzobrazuje obsah, v našem případě z adresáře `"file:///android_asset/FILE.html"`
 - `BottomNavigationView` = spodní navigační bar
 
-<code>
+```
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -55,13 +55,13 @@ Jedná se o moderní nástroj pro správu starších vozů.
         app:menu="@menu/navigation_bar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-</code>
+```
 
 ### Navigace
 `navigation_bar.xml`
 - obsah `BottomNavigationView`
 
-<code>
+```
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
@@ -81,5 +81,5 @@ Jedná se o moderní nástroj pro správu starších vozů.
         android:title="Nastavení"
         android:icon="@drawable/ic_baseline_settings_24"/>
 </menu>
-</code>
+```
 
