@@ -15,12 +15,12 @@ Jedná se o moderní nástroj pro správu starších vozů.
 
 ## Dev doc
 
-### Rozložení
-`activity_main.xml`
-- základní rozvětvení UI (User Interface)
-- `FrameLayout` zaobaluje `WebView`
-- `WebView` = vyzobrazuje obsah, v našem případě z adresáře `"file:///android_asset/FILE.html"`
-- `BottomNavigationView` = spodní navigační bar
+### Rozložení UI
+
+V souboru `activity_main.xml` nalezneme základní rozvětvení UI (User Interface).
+- komponenta `FrameLayout` zaobaluje komponentu `WebView`
+- `WebView` - vyzobrazuje obsah, v našem případě z adresáře `"file:///android_asset/FILE.html"`
+- `BottomNavigationView` - spodní navigační bar
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -58,8 +58,8 @@ Jedná se o moderní nástroj pro správu starších vozů.
 ```
 
 ### Navigace
-`navigation_bar.xml`
-- obsah `BottomNavigationView`
+
+V souboru `navigation_bar.xml` nalezneme obsah komponenty `BottomNavigationView`
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
