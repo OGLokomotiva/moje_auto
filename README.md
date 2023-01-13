@@ -84,4 +84,29 @@ V souboru `bottom_navigation.xml` nalezneme obsah komponenty `BottomNavigationVi
 
 Jednotlivé buttony v navigačním baru, odkazují na fragmenty, které následovně vyzobrazují obsah, načtením příslušného .html souboru.
 
+```
+bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment selectedFragment = null;
+
+                switch (item.getItemId()) {
+                    case R.id.nav_home:
+                        selectedFragment = new HomeFragment();
+                        break;
+                    case R.id.nav_refueling:
+                        selectedFragment = new RefuelingFragment();
+                        break;
+                    case R.id.nav_settings:
+                        selectedFragment = new SettingsFragment();
+                        break;
+                }
+
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
+
+                return true;
+            }
+        });
+```
+
 
