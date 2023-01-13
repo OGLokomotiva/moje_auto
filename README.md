@@ -59,24 +59,23 @@ V souboru `activity_main.xml` nalezneme základní rozvětvení UI (User Interfa
 
 ### Navigace
 
-V souboru `navigation_bar.xml` nalezneme obsah komponenty `BottomNavigationView`
+V souboru `bottom_navigation.xml` nalezneme obsah komponenty `BottomNavigationView`
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="home"
-        android:onClick=""
+        android:id="@+id/nav_home"
         android:enabled="true"
         android:title="Přehled"
         android:icon="@drawable/ic_baseline_directions_car_24"/>
     <item
-        android:id="refueling"
+        android:id="@+id/nav_refueling"
         android:enabled="true"
         android:title="Tankování"
         android:icon="@drawable/ic_baseline_local_gas_station_24"/>
     <item
-        android:id="settings"
+        android:id="@+id/nav_settings"
         android:enabled="true"
         android:title="Nastavení"
         android:icon="@drawable/ic_baseline_settings_24"/>
