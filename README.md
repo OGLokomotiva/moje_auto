@@ -118,5 +118,14 @@ bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedL
 - je užívána knihovna pro JS - cordova-plugin-file
 
 #### Souhlas živatele
+- v souboru `AndroidManifest.xml`
+
+> žádá uživatele o povolení k zápisu dat 
+
+```uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"```
+
+> žádá uživatele o povolení ke čtení dat
+
+```uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"```
 
 #### Instalace knihovny
