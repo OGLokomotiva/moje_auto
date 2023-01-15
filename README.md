@@ -63,7 +63,7 @@
 ### Navigace
 
 > bottom_navigation.xml
-> - prvky navigace ([BottomNavigationView](https://developer.android.com/reference/com/google/android/material/bottomnavigation/BottomNavigationView)), určuje komponenta [menu](https://developer.android.com/reference/android/view/Menu)
+> - prvky navigace ([`BottomNavigationView`](https://developer.android.com/reference/com/google/android/material/bottomnavigation/BottomNavigationView)), určuje komponenta [`menu`](https://developer.android.com/reference/android/view/Menu)
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
