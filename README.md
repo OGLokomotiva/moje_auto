@@ -129,3 +129,5 @@ bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedL
 ```uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"```
 
 #### Instalace knihovny
+
+[cordova.apache.org](https://cordova.apache.org/#getstarted)
