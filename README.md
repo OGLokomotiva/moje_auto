@@ -10,17 +10,24 @@ Jedná se o moderní nástroj pro správu starších vozů.
 ## Použité nástroje a technologie
 - Android Studio
 - HTML, CSS, JavaScrypt, JAVA
-- jedná se o tzv. "webapp"
+- cordova-plugin-file (knihovna pr JS)
 
 ## Dev doc
 
 ### Rozložení UI
+- jsou využívány komponenty:
+    - [ConstraintLayout](https://developer.android.com/develop/ui/views/layout/constraint-layout)
+    - [FrameLayout](https://developer.android.com/reference/android/widget/FrameLayout)
+    - [WebView](https://developer.android.com/reference/android/webkit/WebView)
+    - [BottomNavigationView](https://developer.android.com/reference/com/google/android/material/bottomnavigation/BottomNavigationView)
+    - [menu](https://developer.android.com/reference/android/view/Menu)
 
-V souboru `activity_main.xml` nalezneme základní rozvětvení UI (User Interface).
+#### Krátký popis rozvětvení
 - komponenta `FrameLayout` zaobaluje komponentu `WebView`
-- `WebView` - vyzobrazuje obsah, v našem případě z adresáře `"file:///android_asset/FILE.html"`
-- `BottomNavigationView` - spodní navigační bar
+- komponenta `WebView` vyzobrazuje obsah, v našem případě z adresáře `"file:///android_asset/FILE.html"`
+- komponenta `BottomNavigationView` vyzobrazuje spodní navigační bar
 
+*//activity_main.xml*
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -57,9 +64,9 @@ V souboru `activity_main.xml` nalezneme základní rozvětvení UI (User Interfa
 ```
 
 ### Navigace
+- prvky navigace ([BottomNavigationView](https://developer.android.com/reference/com/google/android/material/bottomnavigation/BottomNavigationView)), určuje komponenta [menu](https://developer.android.com/reference/android/view/Menu)
 
-V souboru `bottom_navigation.xml` nalezneme obsah komponenty `BottomNavigationView`
-
+*//bottom_navigation.xml*
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
@@ -81,8 +88,9 @@ V souboru `bottom_navigation.xml` nalezneme obsah komponenty `BottomNavigationVi
 </menu>
 ```
 
-Jednotlivé buttony v navigačním baru, odkazují na fragmenty, které následovně vyzobrazují obsah, načtením příslušného .html souboru.
+- jednotlivé buttony v navigačním baru, odkazují na fragmenty, které následovně vyzobrazují obsah, načtením příslušného .html souboru
 
+*//MainActivity.java*
 ```
 bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -108,4 +116,10 @@ bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedL
         });
 ```
 
+### Práce s uložištěm zařízení
+- nutný souhlas uživatele
+- je užívána knihovna pro JS - cordova-plugin-file
 
+#### Souhlas živatele
+
+#### Instalace knihovny
