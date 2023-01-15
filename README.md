@@ -1,31 +1,28 @@
 # Moje Auto
 - *graduation thesis*
+- moderní nástroj pro správu starších vozů
+- kompatibilní s OS Androind 5.1 (Lolipop) a vyšší
 
-## O aplikaci
-Jedná se o moderní nástroj pro správu starších vozů.
+## Dev documentation
 
-## Kompatibilita
-- Android 5.1 (Lolipop) a vyšší
-
-## Použité nástroje a technologie
+### Použité nástroje a technologie
 - Android Studio
 - HTML, CSS, JavaScrypt, JAVA
 - cordova-plugin-file (knihovna pr JS)
 
-## Dev doc
-
 ### Rozložení UI
 - jsou využívány komponenty:
-    - [ConstraintLayout](https://developer.android.com/develop/ui/views/layout/constraint-layout)
+    - [`ConstraintLayout`](https://developer.android.com/develop/ui/views/layout/constraint-layout)
     - [FrameLayout](https://developer.android.com/reference/android/widget/FrameLayout)
     - [WebView](https://developer.android.com/reference/android/webkit/WebView)
     - [BottomNavigationView](https://developer.android.com/reference/com/google/android/material/bottomnavigation/BottomNavigationView)
     - [menu](https://developer.android.com/reference/android/view/Menu)
 
-#### Krátký popis rozvětvení
-- komponenta `FrameLayout` zaobaluje komponentu `WebView`
-- komponenta `WebView` vyzobrazuje obsah, v našem případě z adresáře `"file:///android_asset/FILE.html"`
-- komponenta `BottomNavigationView` vyzobrazuje spodní navigační bar
+#### Krátký popis rozložení
+- komponenta [FrameLayout](https://developer.android.com/reference/android/widget/FrameLayout) zaobaluje komponentu [WebView](https://developer.android.com/reference/android/webkit/WebView)
+- komponenta [WebView](https://developer.android.com/reference/android/webkit/WebView) vyzobrazuje obsah, v našem případě z adresáře `"file:///android_asset/FILE.html"`
+- komponenta [BottomNavigationView](https://developer.android.com/reference/com/google/android/material/bottomnavigation/BottomNavigationView) vyzobrazuje spodní navigační bar
+- prvky navigačního baru tvoří komponenta [menu](https://developer.android.com/reference/android/view/Menu)
 
 *//activity_main.xml*
 ```
