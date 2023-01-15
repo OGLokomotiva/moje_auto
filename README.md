@@ -13,18 +13,18 @@
 ### Rozložení UI
 - jsou využívány komponenty:
     - [`ConstraintLayout`](https://developer.android.com/develop/ui/views/layout/constraint-layout)
-    - [FrameLayout](https://developer.android.com/reference/android/widget/FrameLayout)
-    - [WebView](https://developer.android.com/reference/android/webkit/WebView)
-    - [BottomNavigationView](https://developer.android.com/reference/com/google/android/material/bottomnavigation/BottomNavigationView)
-    - [menu](https://developer.android.com/reference/android/view/Menu)
+    - [`FrameLayout`](https://developer.android.com/reference/android/widget/FrameLayout)
+    - [`WebView`](https://developer.android.com/reference/android/webkit/WebView)
+    - [`BottomNavigationView`](https://developer.android.com/reference/com/google/android/material/bottomnavigation/BottomNavigationView)
+    - [`menu`](https://developer.android.com/reference/android/view/Menu)
 
 #### Krátký popis rozložení
-- komponenta [FrameLayout](https://developer.android.com/reference/android/widget/FrameLayout) zaobaluje komponentu [WebView](https://developer.android.com/reference/android/webkit/WebView)
-- komponenta [WebView](https://developer.android.com/reference/android/webkit/WebView) vyzobrazuje obsah, v našem případě z adresáře `"file:///android_asset/FILE.html"`
-- komponenta [BottomNavigationView](https://developer.android.com/reference/com/google/android/material/bottomnavigation/BottomNavigationView) vyzobrazuje spodní navigační bar
-- prvky navigačního baru tvoří komponenta [menu](https://developer.android.com/reference/android/view/Menu)
+- komponenta [`FrameLayout`](https://developer.android.com/reference/android/widget/FrameLayout) zaobaluje komponentu [`WebView`](https://developer.android.com/reference/android/webkit/WebView)
+- komponenta [`WebView`](https://developer.android.com/reference/android/webkit/WebView) vyzobrazuje obsah, v našem případě z adresáře `"file:///android_asset/FILE.html"`
+- komponenta [`BottomNavigationView`](https://developer.android.com/reference/com/google/android/material/bottomnavigation/BottomNavigationView) vyzobrazuje spodní navigační bar
+- prvky navigačního baru tvoří komponenta [`menu`](https://developer.android.com/reference/android/view/Menu)
 
-*//activity_main.xml*
+> activity_main.xml
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -61,9 +61,10 @@
 ```
 
 ### Navigace
-- prvky navigace ([BottomNavigationView](https://developer.android.com/reference/com/google/android/material/bottomnavigation/BottomNavigationView)), určuje komponenta [menu](https://developer.android.com/reference/android/view/Menu)
 
-*//bottom_navigation.xml*
+> bottom_navigation.xml
+> - prvky navigace ([BottomNavigationView](https://developer.android.com/reference/com/google/android/material/bottomnavigation/BottomNavigationView)), určuje komponenta [menu](https://developer.android.com/reference/android/view/Menu)
+
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
@@ -85,9 +86,8 @@
 </menu>
 ```
 
-- jednotlivé buttony v navigačním baru, odkazují na fragmenty, které následovně vyzobrazují obsah, načtením příslušného .html souboru
-
-*//MainActivity.java*
+> MainActivity.java
+> - - jednotlivé buttony v navigačním baru, odkazují na fragmenty, které následovně vyzobrazují obsah, načtením příslušného .html souboru
 ```
 bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
