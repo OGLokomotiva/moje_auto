@@ -7,7 +7,7 @@
 
 ### Použité nástroje a technologie
 - Android Studio
-- [Cordova](https://cordova.apache.org/)
+- [LocalStorage](https://cs.wikipedia.org/wiki/Web_storage)
 - HTML, CSS, JS, JAVA
 
 ### Rozložení UI
@@ -115,7 +115,7 @@ bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedL
 
 ### Práce s uložištěm zařízení
 - nutný souhlas uživatele
-- je žíván plugin [Cordova](https://cordova.apache.org/)
+- je žíváno [LocalStorage](https://cs.wikipedia.org/wiki/Web_storage)
 
 #### Souhlas živatele
 - v souboru `AndroidManifest.xml`
@@ -127,7 +127,3 @@ bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedL
 > žádá uživatele o povolení ke čtení dat
 
 ```uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"```
-
-#### Instalace knihovny
-
-[cordova.apache.org](https://cordova.apache.org/#getstarted)
