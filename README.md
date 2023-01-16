@@ -7,8 +7,8 @@
 
 ### Použité nástroje a technologie
 - Android Studio
-- HTML, CSS, JavaScrypt, JAVA
-- cordova-plugin-file (knihovna pr JS)
+- [Cordova](https://cordova.apache.org/)
+- HTML, CSS, JS, JAVA
 
 ### Rozložení UI
 - jsou využívány komponenty:
@@ -115,7 +115,7 @@ bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedL
 
 ### Práce s uložištěm zařízení
 - nutný souhlas uživatele
-- je užívána knihovna pro JS - cordova-plugin-file
+- je žíván plugin [Cordova](https://cordova.apache.org/)
 
 #### Souhlas živatele
 - v souboru `AndroidManifest.xml`
