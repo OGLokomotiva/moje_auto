@@ -116,6 +116,7 @@ bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedL
 ### Práce s uložištěm zařízení
 - nutný souhlas uživatele
 - je žíváno [LocalStorage](https://cs.wikipedia.org/wiki/Web_storage)
+- nevýhodou je, že localStorage má omezenou velikost
 
 #### Souhlas živatele
 - v souboru `AndroidManifest.xml`
