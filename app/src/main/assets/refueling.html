@@ -1,0 +1,28 @@
+<html>
+
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+
+        <div class="container">
+            <h1>Nové tankování</h1>
+
+            <form id="form_refueling">
+                <input type="text" placeholder="Stav tachometru" name="mileage" id="mileage" required>
+
+                <input type="text" placeholder="Množství paliva" name="fuel" id="fuel" required>
+
+                <input type="text" placeholder="Cena/L" name="price_per" id="price_per">
+
+                <input type="text" placeholder="Cena celkem" name="total_price" id="total_price">
+
+                <input type="submit" value="Přidat" name="submit" class="post-button" onclick="submitForm()"/>
+            </form>
+        
+        </div>
+    </body>
+
+    <script src="script.js"></script>
+</html>
