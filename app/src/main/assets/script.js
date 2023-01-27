@@ -1,70 +1,90 @@
-/*function submitForm() {
-
-    let mileage = document.getElementById("mileage").value;
-    let fuel = document.getElementById("fuel").value;
-    let totalPrice = document.getElementById("total_price").value;
-
-
-    // Převádí data na objekt
-    let data = {
-        mileage: mileage,
-        fuel: fuel,
-        totalPrice: totalPrice
-    }
-
-    // Ukládá data do localStorage
-    localStorage.setItem("refuelingData", JSON.stringify(data));
-
-    console.log("Data byla uložena");
-}
-
-// Vyzobrazení dat
-
-
-let data = JSON.parse(localStorage.getItem("refuelingData"));
-console.log(data.mileage);*/
-
 function submitForm() {
 
     let mileage = document.getElementById("mileage").value;
     let fuel = document.getElementById("fuel").value;
     let price = document.getElementById("price").value;
 
-    let storedData = JSON.parse(localStorage.getItem("refuelingData")); // Nacte ulozena data
+    if (!(/^\d+$/.test(mileage) && /^\d+(\.\d+)?$/.test(fuel) && /^\d+(\.\d+)?$/.test(price)))  {
+        console.log("Data nebyla ulozena, zkontrolujte, ze desetiny jsou oddeleny teckou (u najedzu lze zadavat pouze cela cisla)");
+        return false;
+    } // validuje vstup
 
-    // pokud nejsou data nalezena, vytvori se novy objekt
-    if (!storedData) {
-        storedData = {};
+    if (localStorage.getItem("moje_auto_data")) {
+        var storedData = JSON.parse(localStorage.getItem("moje_auto_data"));
+    } else {
+        var storedData = {};
+    } // Kontroluje, zda existuje moje_auto_data. Pokud ne, tak vytvori novy objekt.
+    
+    // mileage
+    if (storedData.mileage >= mileage ) {
+        console.log("Data nebyla ulozena, vas aktualni najez nemuze byt mensi, nez naposledy zaznamenany :/");
+        return false; // validuje
+    } else if (storedData.mileage) {
+        storedData.mileage = mileage;
+    } else {
+        storedData.mileage = mileage;
     }
-
-    // pricte nove hodnoty
-    storedData.mileage = storedData.mileage ? storedData.mileage + mileage : mileage;
-    storedData.fuel = storedData.fuel ? storedData.fuel + fuel : fuel;
-    storedData.proce = storedData.price ? storedData.price + price : price;
-
-    localStorage.setItem("refuelingData", JSON.stringify(storedData)); // uklada data do localStorage
+    
+    // fuel
+    if (storedData.fuel) {
+        let newFuel = parseInt(storedData.fuel) + parseInt(fuel);
+        
+        storedData.fuel = newFuel;
+    } else {
+        storedData.fuel = fuel;
+    }
+    
+    // price
+    if (storedData.price) {
+        let newPrice = parseInt(storedData.price) + parseInt(price);
+        
+        storedData.price = newPrice;
+    } else {
+        storedData.price = price;
+    }
+    
+    localStorage.setItem("moje_auto_data", JSON.stringify(storedData));
 
     console.log("Data byla ulozena");
 }
 
+function submitSets() {
+    let carName = document.getElementById("carName").value
+
+    if (localStorage.getItem("moje_auto_data")) {
+        var storedData = JSON.parse(localStorage.getItem("moje_auto_data"));
+    } else {
+        var storedData = {};
+    } // Kontroluje, zda existuje moje_auto_data. Pokud ne, tak vytvori novy objekt.
+    
+
+    // carName
+    storedData.carName = carName;
+
+    localStorage.setItem("moje_auto_data", JSON.stringify(storedData));
+}
+
 function displayData() {
 
-    let storedData = JSON.parse(localStorage.getItem("refuelingData")); // nacte ulozena data
+    let storedData = JSON.parse(localStorage.getItem("moje_auto_data")); // nacte ulozena data
 
     // Zobrazeni dat na strance
     if (storedData) {
 
-        
-        let yourAvg = storedData.fuel / (storedData.mileage / 100); //Vypocet avg sptreby
+        let yourAvg = (storedData.fuel / (storedData.mileage / 100)).toFixed(2); //Vypocet avg sptreby
         document.getElementById("yourAvg").innerHTML = yourAvg;
 
         document.getElementById("totalPrice").innerHTML = storedData.price;
         document.getElementById("totalMileage").innerHTML = storedData.mileage;
 
+        document.getElementById("yourCar").innerHTML = storedData.carName;
+
     } else {
         console.log("Nejsou k dispozici zadna ulozena data.");
-    }
+    } 
 }
 
-/*localStorage.removeItem("refuelingData");
-console.log("Data byla smazana");*/
+function clearData() {
+    localStorage.removeItem("moje_auto_data");
+    console.log("Data byla smazana");
+}
