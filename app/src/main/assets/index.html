@@ -1,5 +1,11 @@
 <html>
-
+    
+    <script>
+        window.onload = function() {
+            displayData();
+        };
+    </script>
+    
     <head>
         <link rel="stylesheet" href="styles.css">
     </head>
@@ -15,16 +21,16 @@
                         <th>Průměrná spotřeba</th>
                     </tr>
                     <tr>
-                        <td class=""><br>999999 l/100 Km</td>
+                        <td><br><span id="yourAvg"></span> l/100 Km</td>
                     </tr>
                 </table>
 
                 <table>
                     <tr>
-                        <th>Poslední průměrná spotřeba</th>
+                        <th>Zaplaceno za pohoné hmoty</th>
                     </tr>
                     <tr>
-                        <td class=""><br>999999 l/100 Km</td>
+                        <td><br><span id="totalPrice"></span> Kč</td>
                     </tr>
                 </table>
 
@@ -33,7 +39,7 @@
                         <th>Ujetá vzdálenost</th>
                     </tr>
                     <tr>
-                        <td class=""><br>999999 Km</td>
+                        <td><br><span id="totalMileage"></span> Km</td>
                     </tr>
                 </table>
             </div>

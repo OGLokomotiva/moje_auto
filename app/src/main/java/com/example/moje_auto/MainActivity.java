@@ -4,9 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.webkit.WebView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -15,12 +18,14 @@ import com.google.android.material.navigation.NavigationBarView;
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigation;
+    String[] permissions = {"android.permission.WRITE_EXTERNAL_STORAGE"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Navigace
         bottomNavigation = findViewById(R.id.bottom_navigation);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
         bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -46,8 +51,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //WebView webView = (WebView) findViewById(R.id.webview); // Říká, že se jedná o webovou aplikaci
-        //webView.getSettings().setJavaScriptEnabled(true); // Povoluje JS
-        //webView.loadUrl("file:///android_asset/index.html"); // Načítá index.html jako hlavní stránku
+        // Oprávnění aplikace
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions(permissions, 80);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == 80) {
+            if(grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                Toast.makeText(this, "Download Code", Toast.LENGTH_SHORT).show();
+
+            } else {
+                Toast.makeText(this, "Download Cancel", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }

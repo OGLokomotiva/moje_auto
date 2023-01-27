@@ -58,16 +58,7 @@ form input {
     transition-duration: 0.4s;
     display: inline-block;
 }
-form input:hover {
-    border: 1px solid #5bb0ff;
-}
 ::placeholder {
-    color: white;
-}
-::-ms-input-placeholder {
-    color: white;
-}
-:-ms-input-placeholder {
     color: white;
 }
 
