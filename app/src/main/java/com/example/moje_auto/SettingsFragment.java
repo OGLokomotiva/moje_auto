@@ -17,8 +17,9 @@ public class SettingsFragment extends Fragment {
         View myView = inflater.inflate(R.layout.fragment_refueling, container, false);
 
         WebView webView = myView.findViewById(R.id.webviewRefueling);
-        webView.loadUrl("file:///android_asset/settings.html");
-        webView.getSettings().setJavaScriptEnabled(true);
+        webView.loadUrl("file:///android_asset/settings.html"); // Načítá File.html
+        webView.getSettings().setJavaScriptEnabled(true); // Povoluje JS
+        webView.getSettings().setDomStorageEnabled(true); // Povoluje localStorage
         WebSettings webSettings = webView.getSettings();
 
         return myView;
