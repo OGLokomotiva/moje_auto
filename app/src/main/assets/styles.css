@@ -35,3 +35,53 @@ td, th {
     text-align: center;
     font-size: 1.2em;
 }
+
+form {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 19em;
+    margin-top: 2em;
+    text-align: center;
+    background-color: #272727;
+    border-radius: 1em;
+}
+
+form input {
+    padding: 0.4em;
+    margin: 2em;
+    text-decoration: none;
+    background-color: #4b4b4b;
+    color: white;
+    border-radius: 1em;
+    border: 3px solid #447ec5;
+    text-align: center;
+    transition-duration: 0.4s;
+    display: inline-block;
+}
+form input:hover {
+    border: 1px solid #5bb0ff;
+}
+::placeholder {
+    color: white;
+}
+::-ms-input-placeholder {
+    color: white;
+}
+:-ms-input-placeholder {
+    color: white;
+}
+
+.post-button {
+    width: 10em;
+    height: 3em;
+    background: none;
+    border-radius: 1em;
+    border: 1px solid #5bb0ff;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.post-button :active {
+    background-color: #5bb0ff;
+}
